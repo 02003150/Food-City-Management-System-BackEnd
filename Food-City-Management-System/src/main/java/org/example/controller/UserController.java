@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.dto.User;
 
 import org.example.service.UserService;
@@ -11,9 +12,10 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequiredArgsConstructor
 public class UserController {
-@Autowired
-    UserService service;
+
+   final UserService service;
 @PostMapping("/add-user")
 public void addUser(@RequestBody User user){
     service.addUser(user);

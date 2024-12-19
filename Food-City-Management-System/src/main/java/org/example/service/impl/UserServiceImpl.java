@@ -16,8 +16,8 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     final ModelMapper mapper;
-    @Autowired
-    UserRepository repository;
+
+    final UserRepository repository;
 
     @Override
     public UserEntity addUser(User user) {

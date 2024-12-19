@@ -1,5 +1,7 @@
 package org.example.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.example.dto.Supplier;
 import org.example.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,16 +11,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
+@RequiredArgsConstructor
 public class SupplierController {
-    @Autowired
-    SupplierService service;
+
+    final SupplierService service;
+
     @PostMapping("/add-supplier")
     @ResponseStatus(HttpStatus.OK)
     public void addSupplier(@RequestBody Supplier supplier){
         service.addSupplier(supplier);
     }
 
-    @DeleteMapping("/delete-supplier")
+    @DeleteMapping("/delete-supplier/{suplierId}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteSupplier(@PathVariable Integer suplierId){
         service.deleteSupplier(suplierId);

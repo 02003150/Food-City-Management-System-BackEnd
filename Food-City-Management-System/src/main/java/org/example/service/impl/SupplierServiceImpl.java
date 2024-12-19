@@ -17,8 +17,8 @@ import java.util.Optional;
 @Service
 public class SupplierServiceImpl implements SupplierService {
     final ModelMapper mapper;
-    @Autowired
-    SupplierRepository repository;
+
+    final SupplierRepository repository;
 
     @Override
     public SupplierEntity addSupplier(Supplier supplier) {

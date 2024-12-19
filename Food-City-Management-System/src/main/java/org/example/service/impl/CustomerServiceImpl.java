@@ -20,8 +20,8 @@ import java.util.Optional;
 public class CustomerServiceImpl implements CustomerService {
     final ModelMapper mapper;
 
-    @Autowired
-    CustomerRepository repository;
+
+    final CustomerRepository repository;
 
     @Override
     public CustomerEntity addCustomer(Customer customer) {

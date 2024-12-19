@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.dto.Customer;
 import org.example.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,10 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequiredArgsConstructor
 public class CustomerController {
-    @Autowired
-    CustomerService service;
+
+    final CustomerService service;
     @PostMapping("/add-customer")
     public void addCustomers(@RequestBody Customer customer){
     service.addCustomer(customer);

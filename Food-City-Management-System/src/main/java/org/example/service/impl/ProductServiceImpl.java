@@ -16,9 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     final ModelMapper mapper;
+    final ProductRepository repository;
 
-    @Autowired
-    ProductRepository repository;
     @Override
     public ProductEntity addProduct(Product product) {
        return repository.save(mapper.map(product, ProductEntity.class));
